@@ -53,7 +53,6 @@ class CropImageUploadBehavior extends UploadBehavior
 	{
 		/** @var BaseActiveRecord $model */
 		$model = $this->owner;
-
 		if (empty($this->crop_field)) {
 			$this->crop_value = $model->getAttribute($this->attribute);
 			$this->crop_changed = !empty($this->crop_value);
@@ -91,7 +90,7 @@ class CropImageUploadBehavior extends UploadBehavior
 		parent::afterSave();
 
 //		if ($this->crop_changed) {
-		$this->createCrop();
+			$this->createCrop();
 //		}
 	}
 	/**
